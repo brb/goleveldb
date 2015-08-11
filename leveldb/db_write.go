@@ -79,7 +79,7 @@ func (db *DB) flush(n int) (mdb *memDB, mdbFree int, err error) {
 		switch {
 		case v.tLen(0) >= db.s.o.GetWriteL0SlowdownTrigger() && !delayed:
 			delayed = true
-			time.Sleep(time.Millisecond)
+			//time.Sleep(time.Millisecond)
 		case mdbFree >= n:
 			return false
 		case v.tLen(0) >= db.s.o.GetWriteL0PauseTrigger():

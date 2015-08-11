@@ -177,18 +177,20 @@ func Open(stor storage.Storage, o *opt.Options) (db *DB, err error) {
 		}
 	}()
 
-	err = s.recover()
-	if err != nil {
-		if !os.IsNotExist(err) || s.o.GetErrorIfMissing() {
-			return
-		}
-		err = s.create()
+	if false {
+		err = s.recover()
 		if err != nil {
+			if !os.IsNotExist(err) || s.o.GetErrorIfMissing() {
+				return
+			}
+			err = s.create()
+			if err != nil {
+				return
+			}
+		} else if s.o.GetErrorIfExist() {
+			err = os.ErrExist
 			return
 		}
-	} else if s.o.GetErrorIfExist() {
-		err = os.ErrExist
-		return
 	}
 
 	return openDB(s)
