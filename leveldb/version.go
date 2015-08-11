@@ -10,9 +10,9 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	"github.com/syndtr/goleveldb/leveldb/iterator"
-	"github.com/syndtr/goleveldb/leveldb/opt"
-	"github.com/syndtr/goleveldb/leveldb/util"
+	"github.com/brb/goleveldb/leveldb/iterator"
+	"github.com/brb/goleveldb/leveldb/opt"
+	"github.com/brb/goleveldb/leveldb/util"
 )
 
 type tSet struct {

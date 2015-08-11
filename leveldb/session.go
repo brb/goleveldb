@@ -12,11 +12,11 @@ import (
 	"os"
 	"sync"
 
-	"github.com/syndtr/goleveldb/leveldb/errors"
-	"github.com/syndtr/goleveldb/leveldb/journal"
-	"github.com/syndtr/goleveldb/leveldb/opt"
-	"github.com/syndtr/goleveldb/leveldb/storage"
-	"github.com/syndtr/goleveldb/leveldb/util"
+	"github.com/brb/goleveldb/leveldb/errors"
+	"github.com/brb/goleveldb/leveldb/journal"
+	"github.com/brb/goleveldb/leveldb/opt"
+	"github.com/brb/goleveldb/leveldb/storage"
+	"github.com/brb/goleveldb/leveldb/util"
 )
 
 type ErrManifestCorrupted struct {
